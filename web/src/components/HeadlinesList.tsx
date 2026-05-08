@@ -16,7 +16,6 @@ interface Props {
   pagerNumbers?: number[];
   absArticle?: number;
   onGoIndex: (abs: number) => void;
-  totalPages: number;
   currentPage: number;
   onGoPage: (pg: number) => void;
   isFavoritesView?: boolean;
@@ -41,7 +40,7 @@ export default function HeadlinesList({
   article, articleIndex, totalItems, loading, error,
   isFavorite, onToggleFavorite,
   onPrev, onNext, pagerNumbers, absArticle, onGoIndex,
-  totalPages, currentPage, onGoPage, isFavoritesView,
+  currentPage, onGoPage, isFavoritesView,
 }: Props) {
   if (loading) {
     return (

@@ -292,7 +292,7 @@ export default function App() {
               onPrev={() => setArticleIndex((i) => Math.max(0, i - 1))}
               onNext={() => setArticleIndex((i) => Math.min(favorites.length - 1, i + 1))}
               onGoIndex={setArticleIndex}
-              totalPages={1}
+
               currentPage={1}
               onGoPage={() => {}}
               isFavoritesView
@@ -311,7 +311,7 @@ export default function App() {
               onGoIndex={goAbsArticle}
               pagerNumbers={pagerNumbers()}
               absArticle={absArticle}
-              totalPages={totalPages}
+
               currentPage={page}
               onGoPage={goPage}
             />
