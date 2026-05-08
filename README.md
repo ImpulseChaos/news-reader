@@ -108,8 +108,28 @@ To verify the proxy is running: http://localhost:5177/api/health
 
 ---
 
+## Deploying to Vercel
+
+The `api/` directory at the project root contains serverless function equivalents of the Express proxy. Vercel runs these automatically — no server management needed.
+
+### Steps
+
+1. Push the repo to GitHub
+2. Go to [vercel.com](https://vercel.com), import the repository
+3. Vercel will auto-detect the `vercel.json` config — no build settings to change
+4. Add your token as an environment variable:
+   - **Key:** `THENEWSAPI_TOKEN`
+   - **Value:** your token
+5. Deploy
+
+That's it. The frontend and API functions are served from the same domain on Vercel, so no CORS issues and no separate server to manage.
+
+> The local `server/` Express proxy is only used for `npm run dev` — it is not deployed to Vercel.
+
+---
+
 ## Security
 
 - `server/.env` is gitignored — never commit it
 - The API token is appended server-side and never forwarded to the client
-- The proxy only accepts requests from `http://localhost:5176`
+- On Vercel, the token is set via the dashboard environment variables, never in code
